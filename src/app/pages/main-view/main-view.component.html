@@ -1,7 +1,7 @@
 <div class="root">
   <div class="navbar">
     <div class="navbar-brand">
-      <h1 class="app-name has-gradient-text">{{ titleApp }}</h1>
+      <h1 class="app-name has-gradient-text">{{ title }}</h1>
     </div>
   </div>
   <div class="board">
@@ -12,12 +12,7 @@
       <div class="board-columns" cdkDropListGroup>
         <div class="board-column" *ngFor="let column of board.columns">
           <div class="column-title">{{ column.name }}</div>
-          <div
-            class="task-container"
-            cdkDropList
-            [cdkDropListData]="column.tasks"
-            (cdkDropListDropped)="drop($event)"
-          >
+          <div class="task-container" cdkDropList [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)">
             <div class="task" *ngFor="let task of column.tasks" cdkDrag>
               {{ task }}
             </div>

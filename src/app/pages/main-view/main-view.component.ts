@@ -41,7 +41,7 @@ export class MainViewComponent implements OnInit {
     ]),
   ]);
 
-  titleApp = 'Kanban';
+  title = 'Kanban';
   boardName = 'Tasks board';
 
   ngOnInit(): void {}
