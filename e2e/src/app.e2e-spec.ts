@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,18 +8,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  /* it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Kanban');
-  }); */
-
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(
-      jasmine.objectContaining({
-        level: logging.Level.SEVERE,
-      } as logging.Entry)
-    );
+  it('should navigate to principal url', async () => {
+    await page.navigateTo();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/');
   });
 });

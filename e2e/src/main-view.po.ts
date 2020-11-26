@@ -32,7 +32,6 @@ export class MainViewPage {
   }
 
   async getTask(num: number) {
-    // return element(by.binding('column.tasks')).map((task: any[]) => task[num]);
     return await element(by.binding('board.columns')).map(
       async (column: any[]) =>
         await column[num].map(async (task: any[]) => await task[num])

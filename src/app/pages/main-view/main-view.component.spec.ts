@@ -1,10 +1,5 @@
-import { Board } from 'src/app/models/board.model';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MainViewComponent } from './main-view.component';
-import { DragDropModule, DragDrop } from '@angular/cdk/drag-drop';
-import { Column } from 'src/app/models/column.model';
-import { stringify } from 'querystring';
 
 describe('MainViewComponent', () => {
   let component: MainViewComponent;
@@ -13,7 +8,6 @@ describe('MainViewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MainViewComponent],
-      imports: [DragDropModule],
     }).compileComponents();
   });
 
